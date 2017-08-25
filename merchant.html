@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/xcomponent@5.0.0/dist/xcomponent.js"></script>
+        <script src="button.js"></script>
+    </head>
+    <body>
+        <div id="button-container"></div>
+        <input id="bcolor" placeholder="background-color" value="black"/> <br/>
+        <input id="color" placeholder="color" value="yellow"/> <br/>
+        <button onclick="renderButton()">ReRender Button</button>
+        <script>
+            function renderButton() {
+                document.getElementById('button-container').innerHTML = '';
+                buttonComponent.render({
+                    color: document.getElementById('bcolor').value,
+                    bcolor: document.getElementById('color').value,
+                    onClick: function () {
+                        alert('You clicked my button!');
+                    },
+                    onContainerCreate: function (cid) {
+                        alert("My CID is " + cid);
+                    },
+                    hn: 'foo.com',
+                    partner_name: 'bar',
+                    bn_code: 'xyz',
+                    env: 'sandbox',
+                }, '#button-container');
+            }
+            renderButton();
+        </script>
+    </body>
+</html>

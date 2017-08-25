@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/xcomponent@5.0.0/dist/xcomponent.js"></script>
+        <script src="button.js"></script>
+        <script src="popup.js"></script>
+        <style>
+            #manage {
+                width: 305px;
+                height: 48px;
+                border-radius: 100px;
+                background-color: #0070ba;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                font-size: .8rem;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="manage">Manage Settings</button>
+        <script>
+            
+            document.getElementById('manage').addEventListener('click', function () {
+                if (window.xprops.onClick) {
+                    window.xprops.onClick();
+                }
+                popupComponent.renderPopup({
+                    onContainerCreate: window.xprops.onContainerCreate
+                });
+            });
+
+            if (window.xprops.bcolor !== "#0070ba") {
+                document.getElementById('manage').style['background-color'] = window.xprops.bcolor;
+            }
+            if (window.xprops.color !== "#fff") {
+                document.getElementById('manage').style['color'] = window.xprops.color;
+            }
+        </script>
+    </body>
+</html>

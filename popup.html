@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/xcomponent@5.0.0/dist/xcomponent.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <img src="login.png" height="75%"/>
+        <p>If you click the button below it will send a CID all the way back to the merchants site</p>
+        <button id="send">Send Container ID</button>
+        
+        <script>
+            if (window.xprops.onContainerCreate) {
+                document.getElementById("send").addEventListener('click', function () {
+                    console.log('clicky');
+                    window.xprops.onContainerCreate("this_is_my_cid");
+                    window.xchild.close();
+                });
+            }
+            
+            
+        </script>
+    </body>
+</html>
