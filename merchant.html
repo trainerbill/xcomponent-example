@@ -9,6 +9,10 @@
         <input id="color" placeholder="color" value="yellow"/> <br/>
         <button onclick="renderButton()">ReRender Button</button>
         <script>
+            /* 
+            This is the merchants page.  Here you will use the button xcomponent to render the button in an iframe.
+            I have setup the previous MuseButton properties as well as color, bcolor, and onClick.
+            */
             function renderButton() {
                 document.getElementById('button-container').innerHTML = '';
                 buttonComponent.render({

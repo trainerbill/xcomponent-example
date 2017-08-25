@@ -19,6 +19,13 @@
     <body>
         <button id="manage">Manage Settings</button>
         <script>
+
+            /* 
+            This is the iframe that is hosting the button.  Here you will use popup.js to render a popup.
+            The onContainerCreate is sent to the popup so that the CID can be passed from the popup all the way back to the merchants site.
+            You can see how easy it is to switch colors.  You could easily implement other CSS styles.
+            The onClick function will callback to the merchants site on click
+            */
             
             document.getElementById('manage').addEventListener('click', function () {
                 if (window.xprops.onClick) {
